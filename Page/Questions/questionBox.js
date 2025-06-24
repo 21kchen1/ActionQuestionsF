@@ -15,26 +15,27 @@ import gifJsonListSet from "../../Resource/gifResource.js";
  * @type {GifJsonItem[]}
  */
 var gifJsonList = [];
+// 获取当前页面的 URL
+const Url = new URL(window.location.href);
+// 使用 URLSearchParams 解析查询字符串
+const Params = new URLSearchParams(Url.search);
 
 /**
  * 获取题目信息
  * 包含缓存数据校验
  */
 function getGifJsonList() {
-    // 获取当前页面的 URL
-    const url = new URL(window.location.href);
-    // 使用 URLSearchParams 解析查询字符串
-    const params = new URLSearchParams(url.search);
     // 获取参数
-    const type = params.get("type");
-    if (Number(type) >= gifJsonListSet.length) {
+    const type = Params.get("type");
+    // 判断类型与范围
+    if (type == null || !(/^[+-]?\d+$/.test(type)) || Number(type) >= gifJsonListSet.length || Number(type) < 0) {
         return [];
     }
 
     // 当前问卷列表
     var nowGifJsonList = gifJsonListSet[Number(type)];
     // 先尝试从缓存获取
-    var cacheData = localStorage.getItem(`${params}`);
+    var cacheData = localStorage.getItem(`${Params}_Data`);
     // 没有缓存
     if (cacheData == null)
         return nowGifJsonList;

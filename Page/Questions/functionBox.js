@@ -4,6 +4,31 @@ import { TemplateFactor } from "../../Component/Template/Template.js"
 import { saveToJSONandDownload, saveToCache } from "../../Util/SaveTo.js";
 import { gifJsonList } from "./questionBox.js"
 
+// 网页链接
+const Url = new URL(window.location.href);
+// 网页参数
+const Params = new URLSearchParams(Url.search);
+/**
+ * 记录开始时间
+ */
+const StartTime = new Date();
+/**
+ * 已经完成时间
+ */
+const HaveTime = localStorage.getItem(`${Params}_Time`);
+
+/**
+ * 获取完成时间
+ * @returns {Number} 当前完成时间
+ */
+function getFinishTime() {
+    var nowTime = new Date();
+    // @ts-ignore
+    var finishTime = Math.floor((nowTime - StartTime) / 1000) + Number(HaveTime);
+    console.log(`当前时间: ${finishTime}`);
+    return  finishTime;
+}
+
 /**
  * 添加控制栏浮空
  */
@@ -28,18 +53,17 @@ function addFloat() {
 }
 
 /**
- * 缓存数据
+ * 缓存数据与执行时间
  */
 function cachingData() {
     if (gifJsonList.length <= 0) {
         alert(`本问卷类型数据不存在。`);
         return;
     }
-    // 获取当前页面的 URL
-    const url = new URL(window.location.href);
-    // 使用 URLSearchParams 解析查询字符串
-    const params = new URLSearchParams(url.search);
-    saveToCache(gifJsonList, `${params}`);
+    // 缓存数据
+    saveToCache(gifJsonList, `${Params}_Data`);
+    // 缓存持续时间
+    saveToCache(getFinishTime(), `${Params}_Time`);
     alert("数据暂存成功！");
 }
 
@@ -82,12 +106,14 @@ function saveToJSON() {
         scrollToUndone();
         return;
     }
-    // 获取当前页面的 URL
-    const url = new URL(window.location.href);
-    // 使用 URLSearchParams 解析查询字符串
-    const params = new URLSearchParams(url.search);
+    // 每个题目平均不得小于 3 秒
+    if (getFinishTime() < gifJsonList.length * 3) {
+        alert(`答题时间过短！`);
+        return;
+    }
+
     // 获取参数
-    const type = params.get("type")
+    var type = Params.get("type")
     saveToJSONandDownload(gifJsonList, `问卷_${type}_评估质量数据`);
     cachingData();
 }
