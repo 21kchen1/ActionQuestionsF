@@ -1,0 +1,35 @@
+/* 问题栏 */
+.coreBox .questionBox {
+    width: 100%;
+    margin-bottom: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.coreBox .questionBox .questionList {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 90%;
+}
+
+@media (min-width: 600px) {
+    .coreBox .questionBox .questionList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .coreBox .questionBox .questionList {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1800px) {
+    .coreBox .questionBox .questionList {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.coreBox .questionBox .questionList .theQuestion{
+    margin: 2%;
+}

@@ -1,0 +1,59 @@
+@import url(./Page/Questions/core.css);
+
+* {
+    /* 使元素的宽度和高度包括内边距和边框 */
+    box-sizing: border-box;
+    /* 变化时间 */
+    transition: all 0.3s;
+    scroll-behavior: smooth;
+    word-wrap: break-word;
+}
+
+:root {
+    /* 全局大小基准变量 */
+    --controlLen: 931;
+    /* 独立组件基准比例 */
+    --controlRatio: 1;
+    /* 颜色 */
+    --MainBule: #6699ff;
+    --MainRed: #fc3200bf;
+    --MainGreen: #04a61cc7;
+}
+
+html {
+    /* Cambria, Cochin, Georgia, Times, 'Times New Roman', serif */
+    font-family: Cambria;
+}
+
+body {
+    margin: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: #333;
+}
+
+.BaseBox {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+/* 隐藏 */
+.hidden {
+    display: none;
+}
+
+/* 背景 */
+.backgroundBox {
+    width: 100%;
+    /* 背景固定 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #f4f4f4;
+    background-size: cover;
+    overflow: hidden;
+    z-index: -1;
+}

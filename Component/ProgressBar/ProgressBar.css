@@ -1,0 +1,24 @@
+/* 进度条框 */
+.Template.ProgressBar {
+    --barHeight: calc(var(--controlLen) * var(--controlRatio) * 0.02 * 1px);
+    --mainColor: #6699ff;
+    height: var(--barHeight);
+    width: 100%;
+    background-color: #f1f1f1;
+    border-radius: var(--barHeight);
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+/* 悬浮进度条框 */
+.Template.ProgressBar:hover {
+    transform: translateY(-2px);
+    filter: brightness(0.9);
+}
+
+/* 进度条进度 */
+.Template.ProgressBar .Filler {
+    width: 100%;
+    height: 100%;
+    background-color: var(--mainColor);
+}

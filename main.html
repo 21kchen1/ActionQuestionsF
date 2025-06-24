@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 击球动作评估问卷 </title>
+    <!-- 样式表 -->
+    <link rel="stylesheet" id="style-css" href="./main.css" type="text/css" media="all">
+</head>
+
+<body>
+<!-- 最外层 -->
+<div class="BaseBox">
+    <!-- 背景 -->
+    <section class="backgroundBox"> </section>
+
+    <!-- 核心 -->
+    <section class="coreBox">
+        <!-- 浮动式功能栏 -->
+        <section class="embedBox">
+        <section class="floatBox">
+            <!-- 进度 -->
+            <div class="functionBox progressBox">
+
+            </div>
+            <!-- 控制 -->
+            <div class="functionBox controlBox">
+                <div class="functionBox controlButton" id="save"></div>
+                <div class="functionBox controlButton" id="jump"></div>
+                <div class="functionBox controlButton" id="submit"></div>
+            </div>
+        </section>
+        </section>
+
+        <!-- 问题说明 -->
+        <section class="explainBox">
+            <h1> 羽毛球动作质量评估问卷 </h1>
+            <p>
+                为提供更好的羽毛球动作质量评估服务，希望您能抽出一定时间，<b>根据 GIF 为每个动作评估质量（1-5分，只考虑挥拍手部动作不考虑脚步）</b>。
+                我们非常重视每位用户的宝贵评价，期待您的参与！<br><br>
+
+                <b>界面功能说明：</b><br>
+            </p>
+            <p><b>1. 暂存按钮：</b>可在浏览器缓存当前进度，下次打开同一问卷时可以恢复进度；<br></p>
+            <p><b>2. 跳转按钮：</b>可以跳转至<b>未完成评估</b>的动作；<br></p>
+            <p><b>3. 保存按钮：</b>所有动作评估完成后，点击此按钮即可生成<b>JSON 数据文件</b>，保存所有评估数据；<br></p>
+            <p><b>4. 评分操作：</b>评分完成后，动作窗格颜色主题会由<b style="color: grey;">灰色</b>转换为<b style="color: green;">绿色</b>。<br></p>
+        </section>
+        <div class="hidden finishNumLabel"> 0 </div>
+        <!-- 问题栏 -->
+        <section class="questionBox">
+            <div class="questionList">
+
+            </div>
+        </section>
+    </section>
+</div>
+</body>
+
+<script type="module" src="./main.js"></script>
+
+</html>

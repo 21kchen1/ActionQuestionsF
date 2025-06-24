@@ -1,0 +1,19 @@
+/* 问题说明 */
+.coreBox .explainBox {
+    width: 100%;
+    text-align: center;
+    padding: 5%;
+}
+
+.coreBox .explainBox h1 {
+    font-size: 160%;
+    font-weight: 900;
+}
+
+.coreBox .explainBox p {
+    text-indent: 2em;
+    font-size: 110%;
+    font-weight: 400;
+    text-align: left;
+    line-height: 150%;
+}

@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.custom-range {
+    -webkit-appearance: none; /* 重置默认样式 */
+    appearance: none;
+    width: 100%;
+    height: 10px;
+    background: #ccc;
+    outline: none;
+    border-radius: 5px;
+}
+
+.custom-range::-webkit-slider-thumb {
+    -webkit-appearance: none; /* 重置默认样式 */
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-5px);
+    border: 4px solid #007BFF;
+    background: #FFF;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.custom-range::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    background: #FFF;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.custom-range:hover::-webkit-slider-thumb {
+    width: 15px;
+    height: 20px;
+    border-radius: 30%;
+}
+
+#range-value {
+    font-size: 16px;
+    font-weight: bold;
+    color: #007BFF;
+}

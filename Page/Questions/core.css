@@ -1,0 +1,11 @@
+@import url(./functionBox.css);
+@import url(./questionBox.css);
+@import url(./explainBox.css);
+
+/* 核心 */
+.coreBox {
+    width: 80%;
+    height: auto;
+    background-color: #fff;
+    margin: 10%
+}
