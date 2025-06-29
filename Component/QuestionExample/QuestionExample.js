@@ -31,7 +31,7 @@ class QuestionExample extends Template {
             this.title.textContent = config.title;
         if (config.videoPath)
             // @ts-ignore
-            this.videoFrame.src = `https://player.bilibili.com/player.html?bvid=${config.videoPath}&page=1&autoplay=1`;
+            this.videoFrame.src = `https://player.bilibili.com/player.html?bvid=${config.videoPath}&page=1&autoplay=0`;
     }
 }
 
