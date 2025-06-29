@@ -6,30 +6,35 @@
     justify-content: center;
 }
 
+/* 问题列表布局设置 初始一栏 */
 .coreBox .questionBox .questionList {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     width: 90%;
 }
 
+/* 问题列表布局设置 二栏 */
 @media (min-width: 600px) {
     .coreBox .questionBox .questionList {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
+/* 问题列表布局设置 三栏 */
 @media (min-width: 1200px) {
     .coreBox .questionBox .questionList {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
+/* 问题列表布局设置 四栏 */
 @media (min-width: 1800px) {
     .coreBox .questionBox .questionList {
         grid-template-columns: repeat(4, 1fr);
     }
 }
 
+/* 问题列表 各问题间隔设置 */
 .coreBox .questionBox .questionList .theQuestion{
     margin: 2%;
 }

@@ -1,18 +1,21 @@
 /* 问题说明 */
 .coreBox .explainBox {
+    --explainHeight: calc(var(--controlLen) * var(--controlRatio) * 0.35 * 1px);
     width: 100%;
     text-align: center;
     padding: 5%;
 }
 
+/* 标题字体 */
 .coreBox .explainBox h1 {
-    font-size: 160%;
+    font-size: calc(var(--explainHeight) * 0.08);
     font-weight: 900;
 }
 
+/* 正文字体 */
 .coreBox .explainBox p {
     text-indent: 2em;
-    font-size: 110%;
+    font-size: calc(var(--explainHeight) * 0.06);
     font-weight: 400;
     text-align: left;
     line-height: 150%;

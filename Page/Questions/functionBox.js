@@ -1,5 +1,6 @@
 import Button from "../../Component/Button/Button.js";
 import ProgressBar from "../../Component/ProgressBar/ProgressBar.js";
+import QuestionExample from "../../Component/QuestionExample/QuestionExample.js";
 import { TemplateFactor } from "../../Component/Template/Template.js"
 import { saveToJSONandDownload, saveToCache } from "../../Util/SaveTo.js";
 import { gifJsonList } from "./questionBox.js"
@@ -89,6 +90,22 @@ function scrollToUndone() {
 }
 
 /**
+ * 显示样例
+ */
+function showExample() {
+    // 样例盒子
+    const examplePanelHeight = "70vh";
+    var examplePanel = document.querySelector(".coreBox .embedBox .examplePanel");
+    // @ts-ignore
+    if (examplePanel.style.height !== examplePanelHeight)
+    // @ts-ignore
+        examplePanel.style.height = examplePanelHeight;
+    else
+    // @ts-ignore
+        examplePanel.style.height = "0";
+}
+
+/**
  * 结果保存回调函数
  */
 function saveToJSON() {
@@ -128,7 +145,7 @@ async function setAll() {
     const finishNumLabel = document.querySelector(".hidden.finishNumLabel");
     // 添加进度条
     var barFactor = new TemplateFactor(ProgressBar);
-    const progressBox = document.querySelector(".coreBox .floatBox .progressBox");
+    const progressBox = document.querySelector(".coreBox .floatBox .controlPanel .progressBox");
     /**
      * @type {ProgressBar}
      */
@@ -146,7 +163,7 @@ async function setAll() {
     var buttonFactor = new TemplateFactor(Button)
 
     // 缓存
-    const saveButtonBox = document.querySelector(".coreBox .floatBox .controlButton#save");
+    const saveButtonBox = document.querySelector(".coreBox .floatBox .controlPanel .controlButton#save");
     /**
      * @type {Button}
      */
@@ -155,22 +172,70 @@ async function setAll() {
     saveButton.setConfig(new Button.Config("暂存", "var(--MainGreen)", cachingData));
 
     // 跳转
-    const jumpButtonBox = document.querySelector(".coreBox .floatBox .controlButton#jump");
+    const jumpButtonBox = document.querySelector(".coreBox .floatBox .controlPanel .controlButton#jump");
     /**
      * @type {Button}
      */
     // @ts-ignore
     var jumpButton = await buttonFactor.create(jumpButtonBox);
-    jumpButton.setConfig(new Button.Config("跳转", "var(--MainRed)", scrollToUndone));
+    jumpButton.setConfig(new Button.Config("跳转", "var(--MainPurple)", scrollToUndone));
+
+    // 示例
+    const exampleButtonBox = document.querySelector(".coreBox .floatBox .controlPanel .controlButton#example");
+    /**
+     * @type {Button}
+     */
+    // @ts-ignore
+    var exampleButton = await buttonFactor.create(exampleButtonBox);
+    exampleButton.setConfig(new Button.Config("示例", "var(--MainRed)", showExample));
 
     // 提交
-    const submitButtonBox = document.querySelector(".coreBox .floatBox .controlButton#submit");
+    const submitButtonBox = document.querySelector(".coreBox .floatBox .controlPanel .controlButton#submit");
     /**
      * @type {Button}
      */
     // @ts-ignore
     var submitButton = await buttonFactor.create(submitButtonBox);
     submitButton.setConfig(new Button.Config("提交", null, saveToJSON));
+
+    // 样例
+    var exampleFactor = new TemplateFactor(QuestionExample)
+    // 正手高远球
+    const frehandHighBox = document.querySelector(".coreBox .floatBox .examplePanel .theExample#ForehandHigh");
+    /**
+     * @type {QuestionExample}
+     */
+    // @ts-ignore
+    var frehandHighExample = await exampleFactor.create(frehandHighBox);
+    frehandHighExample.setConfig(new QuestionExample.Config(null, "正手高远球", "BV1TJ411K7Lh"))
+
+    // 正手吊球
+    const forehandLobBox = document.querySelector(".coreBox .floatBox .examplePanel .theExample#ForehandLob");
+    /**
+     * @type {QuestionExample}
+     */
+    // @ts-ignore
+    var forehandLobExample = await exampleFactor.create(forehandLobBox);
+    forehandLobExample.setConfig(new QuestionExample.Config(null, "正手吊球", "BV1Z4411R7zw"))
+
+    // 正手杀球
+    const forehandKillBox = document.querySelector(".coreBox .floatBox .examplePanel .theExample#ForehandKill");
+    /**
+     * @type {QuestionExample}
+     */
+    // @ts-ignore
+    var forehandKillExample = await exampleFactor.create(forehandKillBox);
+    forehandKillExample.setConfig(new QuestionExample.Config(null, "正手杀球", "BV1gq4y1U7y7"))
+
+    // 反手过渡球
+    const backhandTransitionBox = document.querySelector(".coreBox .floatBox .examplePanel .theExample#BackhandTransition");
+    /**
+     * @type {QuestionExample}
+     */
+    // @ts-ignore
+    var backhandTransitionExample = await exampleFactor.create(backhandTransitionBox);
+    backhandTransitionExample.setConfig(new QuestionExample.Config(null, "反手过渡球", "BV1fb1aYGEGb"))
+
 }
 
 export { setAll };

@@ -1,5 +1,6 @@
 /**
  * 抽象组件模板
+ * @deprecated 废弃的旧版本
  */
 class Template {
     /**

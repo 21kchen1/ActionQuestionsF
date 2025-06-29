@@ -3,16 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>自定义滑块样式</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Round Corner Trapezoid Button</title>
+    <style>
+        /* 按钮样式 */
+        .trapezoid-button {
+            /* 按钮的基本样式 */
+            background-color: #6699ff; /* 背景颜色 */
+            color: white; /* 文字颜色 */
+            padding: 10px 20px; /* 内边距 */
+            text-align: center; /* 文字居中 */
+            text-decoration: none; /* 去掉下划线 */
+            display: inline-block; /* 内联块显示 */
+            font-size: 16px; /* 字体大小 */
+            cursor: pointer; /* 鼠标指针样式 */
+            position: relative; /* 相对定位 */
+            overflow: hidden; /* 隐藏溢出部分 */
+        }
+
+        /* 按钮的圆角梯形效果 */
+        .trapezoid-button::before {
+            content: ''; /* 伪元素内容 */
+            position: absolute; /* 绝对定位 */
+            top: 0; /* 顶部对齐 */
+            left: 0; /* 左边对齐 */
+            width: 100%; /* 宽度为按钮宽度 */
+            height: 100%; /* 高度为按钮高度 */
+            background: inherit; /* 继承按钮的背景 */
+            border-radius: 10px; /* 圆角 */
+            transform: skewX(-20deg); /* 沿 X 轴倾斜 */
+            z-index: -1; /* 置于按钮内容之下 */
+        }
+
+        /* 按钮的圆角效果 */
+        .trapezoid-button {
+            border-radius: 10px; /* 圆角 */
+        }
+    </style>
 </head>
 <body>
-    <div class="slider-container">
-        <label for="custom-range">评分：</label>
-        <input type="range" id="custom-range" min="1" max="5" value="3" class="custom-range">
-        <span id="range-value">3</span>
-    </div>
-
-    <script src="script.js"></script>
+    <button class="trapezoid-button">播放视频</button>
 </body>
 </html>

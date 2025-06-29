@@ -57,8 +57,6 @@ def getAllGIF(path: str) -> List[str]:
     """
     return [gifPath for gifPath in getFilePaths(path) if gifPath.endswith(".gif")]
 
-# print(getAllGIF("1"))
-
 class GIFJson:
     def __init__(self, src: str, fname: str, atype: str, value: int) -> None:
         """
@@ -136,12 +134,12 @@ def splitListRandomly(theList: List, splitNum: int, seed: Union[int, None] = Non
 
 def main() -> None:
     jsonsList = []
-    # for path in getFirstFloorDirPaths("./"):
-        # jsonsList.append(buildJSON(path))
     # 获取所有 gif json
     jsons = buildJSON("./GIF")
     # 打乱
     jsonsList.extend(splitListRandomly(jsons, 18, 114514))
+    # 测试页面
+    jsonsList.append(jsons[0:3])
     with open(f"gifResource.js", "w", encoding= "utf-8") as file:
         file.write(f"const gifJsonListSet = {jsonsList};\nexport default gifJsonListSet;")
 
