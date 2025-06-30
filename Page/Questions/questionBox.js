@@ -82,7 +82,9 @@ async function setAll() {
         // @ts-ignore
         var question = await questionFactor.create(newDiv);
         // 设置标题及变化时的回调函数
-        question.setConfig(new Question.Config(null, null, `${index + 1}. ${gifJson.atype}`, gifJson.src, (value) => {
+        question.setConfig(new Question.Config(null, null, `${index + 1}. ${gifJson.atype}`, gifJson.src,
+            // 评分回调函数
+            (value) => {
             // 如果前后状态相同，则不处理
             if (gifJson.value === Number(value))
                 return;

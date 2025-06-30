@@ -1,6 +1,6 @@
 import Button from "../../Component/Button/Button.js";
 import ProgressBar from "../../Component/ProgressBar/ProgressBar.js";
-import QuestionExample from "../../Component/QuestionExample/QuestionExample.js";
+import QuestionExampleVideo from "../../Component/QuestionExampleVideo/QuestionExampleVideo.js";
 import { TemplateFactor } from "../../Component/Template/Template.js"
 import { saveToJSONandDownload, saveToCache } from "../../Util/SaveTo.js";
 import { gifJsonList } from "./questionBox.js"
@@ -199,42 +199,42 @@ async function setAll() {
     submitButton.setConfig(new Button.Config("提交", null, saveToJSON));
 
     // 样例
-    var exampleFactor = new TemplateFactor(QuestionExample)
+    var exampleFactor = new TemplateFactor(QuestionExampleVideo)
     // 正手高远球
     const frehandHighBox = document.querySelector(".coreBox .floatBox .examplePanel .theExample#ForehandHigh");
     /**
-     * @type {QuestionExample}
+     * @type {QuestionExampleVideo}
      */
     // @ts-ignore
     var frehandHighExample = await exampleFactor.create(frehandHighBox);
-    frehandHighExample.setConfig(new QuestionExample.Config(null, "正手高远球", "BV1TJ411K7Lh"))
+    frehandHighExample.setConfig(new QuestionExampleVideo.Config(null, "正手高远球", "BV1TJ411K7Lh"))
 
     // 正手吊球
     const forehandLobBox = document.querySelector(".coreBox .floatBox .examplePanel .theExample#ForehandLob");
     /**
-     * @type {QuestionExample}
+     * @type {QuestionExampleVideo}
      */
     // @ts-ignore
     var forehandLobExample = await exampleFactor.create(forehandLobBox);
-    forehandLobExample.setConfig(new QuestionExample.Config(null, "正手吊球", "BV1Z4411R7zw"))
+    forehandLobExample.setConfig(new QuestionExampleVideo.Config(null, "正手吊球", "BV1Z4411R7zw"))
 
     // 正手杀球
     const forehandKillBox = document.querySelector(".coreBox .floatBox .examplePanel .theExample#ForehandKill");
     /**
-     * @type {QuestionExample}
+     * @type {QuestionExampleVideo}
      */
     // @ts-ignore
     var forehandKillExample = await exampleFactor.create(forehandKillBox);
-    forehandKillExample.setConfig(new QuestionExample.Config(null, "正手杀球", "BV1gq4y1U7y7"))
+    forehandKillExample.setConfig(new QuestionExampleVideo.Config(null, "正手杀球", "BV1gq4y1U7y7"))
 
     // 反手过渡球
     const backhandTransitionBox = document.querySelector(".coreBox .floatBox .examplePanel .theExample#BackhandTransition");
     /**
-     * @type {QuestionExample}
+     * @type {QuestionExampleVideo}
      */
     // @ts-ignore
     var backhandTransitionExample = await exampleFactor.create(backhandTransitionBox);
-    backhandTransitionExample.setConfig(new QuestionExample.Config(null, "反手过渡球", "BV1fb1aYGEGb"))
+    backhandTransitionExample.setConfig(new QuestionExampleVideo.Config(null, "反手过渡球", "BV1fb1aYGEGb"))
 
 }
 
