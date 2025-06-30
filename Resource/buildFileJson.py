@@ -139,7 +139,7 @@ def main() -> None:
     # 打乱
     jsonsList.extend(splitListRandomly(jsons, 18, 114514))
     # 测试页面
-    jsonsList.append(jsons[0:3])
+    # jsonsList.append(jsons[0:3])
     with open(f"gifResource.js", "w", encoding= "utf-8") as file:
         file.write(f"const gifJsonListSet = {jsonsList};\nexport default gifJsonListSet;")
 
