@@ -228,7 +228,7 @@ async function setAll() {
             if (!examplePanel?.classList.contains(classNameFinish) && atypeList.includes(String(nowQuestionLabel.textContent))) {
                 // @ts-ignore
                 examplePanel.style.height = examplePanelHeight;
-                questionExample.setConfig(new QuestionExampleGIF.Config(null, `示例：${nowQuestionLabel.textContent}`, `Resource/ExampleGIF/${nowQuestionLabel.textContent}.gif`));
+                questionExample.setConfig(new QuestionExampleGIF.Config(null, `示例：${nowQuestionLabel.textContent}`, `Resource/ExampleGIF/${nowQuestionLabel.textContent}.gif?time=${new Date().getTime()}`));
             }else
                 // @ts-ignore
                 examplePanel.style.height = "0";
