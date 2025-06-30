@@ -221,14 +221,24 @@ async function setAll() {
     const nowQuestionLabel = document.querySelector(".hidden.nowQuestionLabel");
     // 添加回调函数
     if (nowQuestionLabel !== null) {
+        var atypeDict = {};
         const atypeList = ["正手高远球", "正手吊球", "正手杀球", "反手过渡球"]
+        // 预加载图片并构建字典
+        atypeList.forEach((atype) => {
+            // 预加载图片
+            var newGif = new Image();
+            newGif.src = `Resource/ExampleGIF/${atype}.gif`;
+            // 构建字典
+            atypeDict[atype] = newGif;
+        });
         nowQuestionLabel.addEventListener("click", () => {
             var examplePanel = document.querySelector(".coreBox .embedBox .examplePanel");
             // 面板属于开启状态，且当悬浮于问题上时，显示对应示例
             if (!examplePanel?.classList.contains(classNameFinish) && atypeList.includes(String(nowQuestionLabel.textContent))) {
                 // @ts-ignore
                 examplePanel.style.height = examplePanelHeight;
-                questionExample.setConfig(new QuestionExampleGIF.Config(null, `示例：${nowQuestionLabel.textContent}`, `Resource/ExampleGIF/${nowQuestionLabel.textContent}.gif?time=${new Date().getTime()}`));
+                // 通过字典获取图像
+                questionExample.setConfig(new QuestionExampleGIF.Config(null, `示例：${nowQuestionLabel.textContent}`, atypeDict[nowQuestionLabel.textContent].src));
             }else
                 // @ts-ignore
                 examplePanel.style.height = "0";
