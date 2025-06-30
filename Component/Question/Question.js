@@ -60,12 +60,16 @@ class Question extends Template {
         if (config.imgPath)
             // @ts-ignore
             this.gifImg.src = config.imgPath;
-        if (config.callback) {
+        if (config.rankingCallback) {
             this.inputSlider.addEventListener("input", () => {
                 // @ts-ignore
-                config.callback(this.inputSlider.value);
+                config.rankingCallback(this.inputSlider.value);
             });
         }
+        if (config.mouseEnterCallback)
+            this.controlElement.addEventListener("mouseenter", config.mouseEnterCallback);
+        if (config.mouseLeaveCallback)
+            this.controlElement.addEventListener("mouseleave", config.mouseLeaveCallback);
     }
 }
 
@@ -74,8 +78,14 @@ class Question extends Template {
  */
 Question.Config = class {
     /**
+     * 鼠标回调函数
+     * @callback MouseCallback
+     * @returns {void}
+     */
+
+    /**
      * 输入回调函数
-     * @callback Callback
+     * @callback RankingCallback
      * @param {Number} value 评分
      * @returns {void}
      */
@@ -85,14 +95,18 @@ Question.Config = class {
      * @param {string | null} finishColor 完成颜色
      * @param {string | null} title 问题名称
      * @param {string | null} imgPath 图像路径
-     * @param {Callback | null} callback
+     * @param {RankingCallback | null} rankingCallback 评分回调函数
+     * @param {MouseCallback | null} mouseEnterCallback 鼠标进入回调函数
+     * @param {MouseCallback | null} mouseLeaveCallback 鼠标离开回调函数
      */
-    constructor(color, finishColor, title, imgPath, callback) {
+    constructor(color, finishColor, title, imgPath, rankingCallback, mouseEnterCallback, mouseLeaveCallback) {
         this.title = title;
         this.color = color;
         this.finishColor = finishColor;
         this.imgPath = imgPath;
-        this.callback = callback;
+        this.rankingCallback = rankingCallback;
+        this.mouseEnterCallback = mouseEnterCallback;
+        this.mouseLeaveCallback = mouseLeaveCallback;
     }
 }
 

@@ -69,6 +69,8 @@ async function setAll() {
     const finishNumLabel = document.querySelector(".hidden.finishNumLabel");
     // 题目完成数量
     var finishNum = 0;
+    // 获取当前问题动作类型
+    const nowQuestionLabel = document.querySelector(".hidden.nowQuestionLabel");
 
     var questionFactor = new TemplateFactor(Question);
     // 为每一个图片设置题目和回调
@@ -85,29 +87,49 @@ async function setAll() {
         question.setConfig(new Question.Config(null, null, `${index + 1}. ${gifJson.atype}`, gifJson.src,
             // 评分回调函数
             (value) => {
-            // 如果前后状态相同，则不处理
-            if (gifJson.value === Number(value))
-                return;
-            // 记录完成数量
-            // 从未完成到完成
-            if (gifJson.value === 0) {
-                finishNum += 1;
-            // 从完成到未完成
-            }else if (Number(value) === 0 && finishNum > 0) {
-                finishNum -= 1;
-            }
-            // 保存分数数据
-            gifJson.value = Number(value);
-            // 记录完成数量到页面
-            if (finishNumLabel !== null) {
-                finishNumLabel.textContent = String(finishNum);
+                // 如果前后状态相同，则不处理
+                if (gifJson.value === Number(value))
+                    return;
+                // 记录完成数量
+                // 从未完成到完成
+                if (gifJson.value === 0) {
+                    finishNum += 1;
+                // 从完成到未完成
+                }else if (Number(value) === 0 && finishNum > 0) {
+                    finishNum -= 1;
+                }
+                // 保存分数数据
+                gifJson.value = Number(value);
+                // 记录完成数量到页面
+                if (finishNumLabel !== null) {
+                    finishNumLabel.textContent = String(finishNum);
+                    // 触发回调函数
+                    // @ts-ignore
+                    finishNumLabel.click();
+                }
+                // 设置完成比例
+                console.log(`index: ${index + 1}, fname: ${gifJsonList[index].fname}, value: ${gifJsonList[index].value}`);
+            },
+            // 鼠标进入函数
+            () => {
+                if (nowQuestionLabel == null)
+                    return
+                // 设置击球动作类型
+                nowQuestionLabel.textContent = gifJson.atype;
                 // 触发回调函数
                 // @ts-ignore
-                finishNumLabel.click();
-            }
-            // 设置完成比例
-            console.log(`index: ${index + 1}, fname: ${gifJsonList[index].fname}, value: ${gifJsonList[index].value}`);
-        }));
+                nowQuestionLabel.click();
+            },
+            // 鼠标离去函数
+            () => {
+                if (nowQuestionLabel == null)
+                    return
+                // 设置击球动作类型
+                nowQuestionLabel.textContent = "null";
+                // 触发回调函数
+                // @ts-ignore
+                nowQuestionLabel.click();
+            }));
         // 设置数值
         question.setQuestionValue(gifJson.value);
         questionList?.append()

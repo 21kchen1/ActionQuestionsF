@@ -1,11 +1,12 @@
 /* 问题框 */
 .Template.QuestionExampleVideo {
-    --questionExampleHeight: calc(var(--controlLen) * var(--controlRatio) * 0.3 * 1px);
+    --questionExampleHeight: calc(var(--controlLen) * var(--controlRatio) * 0.35 * 1px);
     --mainColor: #6699ff;
     --finishColor: #04a61cc7;
 
     background-color: #ffffff;
     height: var(--questionExampleHeight);
+    width: 100%;
     border-radius: calc(var(--questionExampleHeight) * 0.05);
     border: 2px solid #cecece;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -28,6 +29,9 @@
     padding-right: 2%;
     font-size: calc(var(--questionExampleHeight) * 0.08);
     writing-mode: vertical-rl;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: bolder;
 }
 

@@ -53,16 +53,26 @@
     background-color: rgba(255, 255, 255, 0.7);
 }
 
-/* 样例盒子宽度设置 */
-.coreBox .floatBox .examplePanel .exampleBox {
-    padding-top: 2%;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+.coreBox .floatBox .examplePanel.finish {
+    height: 0px;
 }
 
-/* 设置每个宽度的间隔 */
+/* 样例盒子宽度设置 */
+.coreBox .floatBox .examplePanel .exampleBox {
+    padding-top: 1%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 设置每个样例 */
 .coreBox .floatBox .examplePanel .exampleBox .theExample {
-    margin: 2%;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

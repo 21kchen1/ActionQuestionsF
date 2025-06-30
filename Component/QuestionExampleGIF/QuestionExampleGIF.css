@@ -1,11 +1,12 @@
 /* 问题框 */
 .Template.QuestionExampleGIF {
-    --questionExampleHeight: calc(var(--controlLen) * var(--controlRatio) * 0.3 * 1px);
+    --questionExampleHeight: calc(var(--controlLen) * var(--controlRatio) * 0.35 * 1px);
     --mainColor: #6699ff;
     --finishColor: #04a61cc7;
 
     background-color: #ffffff;
     height: var(--questionExampleHeight);
+    width: 100%;
     border-radius: calc(var(--questionExampleHeight) * 0.05);
     border: 2px solid #cecece;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -37,7 +38,6 @@
     height: 90%;
     border: 2px solid #cecece;
     border-radius: 5px;
-    overflow: hidden;
 }
 
 /* GIF框悬浮 */
@@ -51,4 +51,11 @@
     width: 100%;
     height: 100%;
     border: none;
+}
+
+/* 图片悬浮 */
+.Template.QuestionExampleGIF .GIFBox img:hover {
+    transform: scale(1.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border: 2px solid var(--mainColor);
 }

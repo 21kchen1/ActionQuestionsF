@@ -1,5 +1,6 @@
 import Button from "../../Component/Button/Button.js";
 import ProgressBar from "../../Component/ProgressBar/ProgressBar.js";
+import QuestionExampleGIF from "../../Component/QuestionExampleGIF/QuestionExampleGIF.js";
 import QuestionExampleVideo from "../../Component/QuestionExampleVideo/QuestionExampleVideo.js";
 import { TemplateFactor } from "../../Component/Template/Template.js"
 import { saveToJSONandDownload, saveToCache } from "../../Util/SaveTo.js";
@@ -89,20 +90,27 @@ function scrollToUndone() {
     }
 }
 
+// 样例面板高度
+const examplePanelHeight = "40vh";
+// 样例面板关闭类名
+const classNameFinish = "finish";
 /**
  * 显示样例
  */
 function showExample() {
     // 样例盒子
-    const examplePanelHeight = "70vh";
     var examplePanel = document.querySelector(".coreBox .embedBox .examplePanel");
-    // @ts-ignore
-    if (examplePanel.style.height !== examplePanelHeight)
-    // @ts-ignore
-        examplePanel.style.height = examplePanelHeight;
+    if (examplePanel?.classList.contains(classNameFinish))
+        examplePanel.classList.remove(classNameFinish);
     else
-    // @ts-ignore
-        examplePanel.style.height = "0";
+        examplePanel?.classList.add(classNameFinish);
+    // // @ts-ignore
+    // if (examplePanel.style.height !== examplePanelHeight)
+    // // @ts-ignore
+    //     examplePanel.style.height = examplePanelHeight;
+    // else
+    // // @ts-ignore
+    //     examplePanel.style.height = "0";
 }
 
 /**
@@ -198,43 +206,70 @@ async function setAll() {
     var submitButton = await buttonFactor.create(submitButtonBox);
     submitButton.setConfig(new Button.Config("提交", null, saveToJSON));
 
-    // 样例
-    var exampleFactor = new TemplateFactor(QuestionExampleVideo)
-    // 正手高远球
-    const frehandHighBox = document.querySelector(".coreBox .floatBox .examplePanel .theExample#ForehandHigh");
+    // 样例工厂
+    var exampleFactor = new TemplateFactor(QuestionExampleGIF);
+    // 样例容器
+    const exampleBox = document.querySelector(".coreBox .floatBox .examplePanel .theExample");
     /**
-     * @type {QuestionExampleVideo}
+     * @type {QuestionExampleGIF}
      */
     // @ts-ignore
-    var frehandHighExample = await exampleFactor.create(frehandHighBox);
-    frehandHighExample.setConfig(new QuestionExampleVideo.Config(null, "正手高远球", "BV1TJ411K7Lh"))
+    var questionExample = await exampleFactor.create(exampleBox);
+    questionExample.setConfig(new QuestionExampleGIF.Config(null, "示例：正手高远球", "Resource/ExampleGIF/正手高远球.gif"));
 
-    // 正手吊球
-    const forehandLobBox = document.querySelector(".coreBox .floatBox .examplePanel .theExample#ForehandLob");
-    /**
-     * @type {QuestionExampleVideo}
-     */
-    // @ts-ignore
-    var forehandLobExample = await exampleFactor.create(forehandLobBox);
-    forehandLobExample.setConfig(new QuestionExampleVideo.Config(null, "正手吊球", "BV1Z4411R7zw"))
+    // 获取当前问题动作类型
+    const nowQuestionLabel = document.querySelector(".hidden.nowQuestionLabel");
+    // 添加回调函数
+    if (nowQuestionLabel !== null) {
+        const atypeList = ["正手高远球", "正手吊球", "正手杀球", "反手过渡球"]
+        nowQuestionLabel.addEventListener("click", () => {
+            var examplePanel = document.querySelector(".coreBox .embedBox .examplePanel");
+            // 面板属于开启状态，且当悬浮于问题上时，显示对应示例
+            if (!examplePanel?.classList.contains(classNameFinish) && atypeList.includes(String(nowQuestionLabel.textContent))) {
+                // @ts-ignore
+                examplePanel.style.height = examplePanelHeight;
+                questionExample.setConfig(new QuestionExampleGIF.Config(null, `示例：${nowQuestionLabel.textContent}`, `Resource/ExampleGIF/${nowQuestionLabel.textContent}.gif`));
+            }else
+                // @ts-ignore
+                examplePanel.style.height = "0";
+        })
+    }
 
-    // 正手杀球
-    const forehandKillBox = document.querySelector(".coreBox .floatBox .examplePanel .theExample#ForehandKill");
-    /**
-     * @type {QuestionExampleVideo}
-     */
-    // @ts-ignore
-    var forehandKillExample = await exampleFactor.create(forehandKillBox);
-    forehandKillExample.setConfig(new QuestionExampleVideo.Config(null, "正手杀球", "BV1gq4y1U7y7"))
+    // // 正手高远球
+    // const frehandHighBox = document.querySelector(".coreBox .floatBox .examplePanel .theExample#ForehandHigh");
+    // /**
+    //  * @type {QuestionExampleVideo}
+    //  */
+    // // @ts-ignore
+    // var frehandHighExample = await exampleFactor.create(frehandHighBox);
+    // frehandHighExample.setConfig(new QuestionExampleVideo.Config(null, "正手高远球", "BV1TJ411K7Lh"))
 
-    // 反手过渡球
-    const backhandTransitionBox = document.querySelector(".coreBox .floatBox .examplePanel .theExample#BackhandTransition");
-    /**
-     * @type {QuestionExampleVideo}
-     */
-    // @ts-ignore
-    var backhandTransitionExample = await exampleFactor.create(backhandTransitionBox);
-    backhandTransitionExample.setConfig(new QuestionExampleVideo.Config(null, "反手过渡球", "BV1fb1aYGEGb"))
+    // // 正手吊球
+    // const forehandLobBox = document.querySelector(".coreBox .floatBox .examplePanel .theExample#ForehandLob");
+    // /**
+    //  * @type {QuestionExampleVideo}
+    //  */
+    // // @ts-ignore
+    // var forehandLobExample = await exampleFactor.create(forehandLobBox);
+    // forehandLobExample.setConfig(new QuestionExampleVideo.Config(null, "正手吊球", "BV1Z4411R7zw"))
+
+    // // 正手杀球
+    // const forehandKillBox = document.querySelector(".coreBox .floatBox .examplePanel .theExample#ForehandKill");
+    // /**
+    //  * @type {QuestionExampleVideo}
+    //  */
+    // // @ts-ignore
+    // var forehandKillExample = await exampleFactor.create(forehandKillBox);
+    // forehandKillExample.setConfig(new QuestionExampleVideo.Config(null, "正手杀球", "BV1gq4y1U7y7"))
+
+    // // 反手过渡球
+    // const backhandTransitionBox = document.querySelector(".coreBox .floatBox .examplePanel .theExample#BackhandTransition");
+    // /**
+    //  * @type {QuestionExampleVideo}
+    //  */
+    // // @ts-ignore
+    // var backhandTransitionExample = await exampleFactor.create(backhandTransitionBox);
+    // backhandTransitionExample.setConfig(new QuestionExampleVideo.Config(null, "反手过渡球", "BV1fb1aYGEGb"))
 
 }
 
