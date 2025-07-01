@@ -12,7 +12,7 @@ r"""
 
 import json
 from typing import Dict, List
-from buildFileJson import getFilePaths
+from buildGIFJs import getFilePaths
 
 # 数据集路径
 datasetPath = r"G:\Badminton\BADS_CLL"

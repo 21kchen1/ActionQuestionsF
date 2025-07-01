@@ -1,0 +1,2 @@
+const exampleGIFListDict = {'反手过渡球': [{'src': '.\\Resource\\.\\ExampleGIF\\反手过渡球\\反手过渡球.gif', 'image': 0}], '正手吊球': [{'src': '.\\Resource\\.\\ExampleGIF\\正手吊球\\正手吊球.gif', 'image': 0}], '正手杀球': [{'src': '.\\Resource\\.\\ExampleGIF\\正手杀球\\正手杀球.gif', 'image': 0}], '正手高远球': [{'src': '.\\Resource\\.\\ExampleGIF\\正手高远球\\正手高远球.gif', 'image': 0}, {'src': '.\\Resource\\.\\ExampleGIF\\正手高远球\\正手高远球2.gif', 'image': 0}]};
+export default exampleGIFListDict;

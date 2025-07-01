@@ -5,6 +5,8 @@ import QuestionExampleVideo from "../../Component/QuestionExampleVideo/QuestionE
 import { TemplateFactor } from "../../Component/Template/Template.js"
 import { saveToJSONandDownload, saveToCache } from "../../Util/SaveTo.js";
 import { gifJsonList } from "./questionBox.js"
+import exampleGIFListDict from "../../Resource/exampleGIFResource.js";
+import { getRandomInt } from "../../Util/MyMath.js";
 
 // 网页链接
 const Url = new URL(window.location.href);
@@ -111,6 +113,21 @@ function showExample() {
     // else
     // // @ts-ignore
     //     examplePanel.style.height = "0";
+}
+
+/**
+ * 预载入图像
+ */
+function preLoadExample() {
+    for (const atype in exampleGIFListDict) {
+        var exampleGIFList = exampleGIFListDict[atype];
+        exampleGIFList.forEach((item) => {
+            var preLoadImage = new Image();
+            // 载入
+            preLoadImage.src = item.src;
+            item.image = preLoadImage
+        });
+    }
 }
 
 /**
@@ -221,66 +238,33 @@ async function setAll() {
     const nowQuestionLabel = document.querySelector(".hidden.nowQuestionLabel");
     // 添加回调函数
     if (nowQuestionLabel !== null) {
-        var atypeDict = {};
-        const atypeList = ["正手高远球", "正手吊球", "正手杀球", "反手过渡球"]
-        // 预加载图片并构建字典
-        atypeList.forEach((atype) => {
-            // 预加载图片
-            var newGif = new Image();
-            newGif.src = `Resource/ExampleGIF/${atype}.gif`;
-            // 构建字典
-            atypeDict[atype] = newGif;
-        });
+        // 预载入样例
+        preLoadExample();
+        // var atypeDict = {};
+        // const atypeList = ["正手高远球", "正手吊球", "正手杀球", "反手过渡球"]
+        // // 预加载图片并构建字典
+        // atypeList.forEach((atype) => {
+        //     // 预加载图片
+        //     var newGif = new Image();
+        //     newGif.src = `Resource/ExampleGIF/${atype}.gif`;
+        //     // 构建字典
+        //     atypeDict[atype] = newGif;
+        // });
         nowQuestionLabel.addEventListener("click", () => {
             var examplePanel = document.querySelector(".coreBox .embedBox .examplePanel");
             // 面板属于开启状态，且当悬浮于问题上时，显示对应示例
-            if (!examplePanel?.classList.contains(classNameFinish) && atypeList.includes(String(nowQuestionLabel.textContent))) {
+            if (!examplePanel?.classList.contains(classNameFinish) && exampleGIFListDict.hasOwnProperty(String(nowQuestionLabel.textContent))) {
                 // @ts-ignore
                 examplePanel.style.height = examplePanelHeight;
+                // 根据长度生成随机数
+                var exampleIndex = getRandomInt(0, exampleGIFListDict[nowQuestionLabel.textContent].length - 1);
                 // 通过字典获取图像
-                questionExample.setConfig(new QuestionExampleGIF.Config(null, `示例：${nowQuestionLabel.textContent}`, atypeDict[nowQuestionLabel.textContent].src));
+                questionExample.setConfig(new QuestionExampleGIF.Config(null, `示例：${nowQuestionLabel.textContent}`, exampleGIFListDict[nowQuestionLabel.textContent][exampleIndex].src));
             }else
                 // @ts-ignore
                 examplePanel.style.height = "0";
         })
     }
-
-    // // 正手高远球
-    // const frehandHighBox = document.querySelector(".coreBox .floatBox .examplePanel .theExample#ForehandHigh");
-    // /**
-    //  * @type {QuestionExampleVideo}
-    //  */
-    // // @ts-ignore
-    // var frehandHighExample = await exampleFactor.create(frehandHighBox);
-    // frehandHighExample.setConfig(new QuestionExampleVideo.Config(null, "正手高远球", "BV1TJ411K7Lh"))
-
-    // // 正手吊球
-    // const forehandLobBox = document.querySelector(".coreBox .floatBox .examplePanel .theExample#ForehandLob");
-    // /**
-    //  * @type {QuestionExampleVideo}
-    //  */
-    // // @ts-ignore
-    // var forehandLobExample = await exampleFactor.create(forehandLobBox);
-    // forehandLobExample.setConfig(new QuestionExampleVideo.Config(null, "正手吊球", "BV1Z4411R7zw"))
-
-    // // 正手杀球
-    // const forehandKillBox = document.querySelector(".coreBox .floatBox .examplePanel .theExample#ForehandKill");
-    // /**
-    //  * @type {QuestionExampleVideo}
-    //  */
-    // // @ts-ignore
-    // var forehandKillExample = await exampleFactor.create(forehandKillBox);
-    // forehandKillExample.setConfig(new QuestionExampleVideo.Config(null, "正手杀球", "BV1gq4y1U7y7"))
-
-    // // 反手过渡球
-    // const backhandTransitionBox = document.querySelector(".coreBox .floatBox .examplePanel .theExample#BackhandTransition");
-    // /**
-    //  * @type {QuestionExampleVideo}
-    //  */
-    // // @ts-ignore
-    // var backhandTransitionExample = await exampleFactor.create(backhandTransitionBox);
-    // backhandTransitionExample.setConfig(new QuestionExampleVideo.Config(null, "反手过渡球", "BV1fb1aYGEGb"))
-
 }
 
 export { setAll };
