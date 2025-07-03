@@ -70,6 +70,8 @@ class Question extends Template {
             this.controlElement.addEventListener("mouseenter", config.mouseEnterCallback);
         if (config.mouseLeaveCallback)
             this.controlElement.addEventListener("mouseleave", config.mouseLeaveCallback);
+        if (config.clickCallback)
+            this.controlElement.addEventListener("click", config.clickCallback)
     }
 }
 
@@ -98,8 +100,9 @@ Question.Config = class {
      * @param {RankingCallback | null} rankingCallback 评分回调函数
      * @param {MouseCallback | null} mouseEnterCallback 鼠标进入回调函数
      * @param {MouseCallback | null} mouseLeaveCallback 鼠标离开回调函数
+     * @param {MouseCallback | null} clickCallback 点击回调函数
      */
-    constructor(color, finishColor, title, imgPath, rankingCallback, mouseEnterCallback, mouseLeaveCallback) {
+    constructor(color, finishColor, title, imgPath, rankingCallback, mouseEnterCallback, mouseLeaveCallback, clickCallback) {
         this.title = title;
         this.color = color;
         this.finishColor = finishColor;
@@ -107,6 +110,7 @@ Question.Config = class {
         this.rankingCallback = rankingCallback;
         this.mouseEnterCallback = mouseEnterCallback;
         this.mouseLeaveCallback = mouseLeaveCallback;
+        this.clickCallback = clickCallback;
     }
 }
 

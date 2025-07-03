@@ -110,7 +110,7 @@ async function setAll() {
                 // 设置完成比例
                 console.log(`index: ${index + 1}, fname: ${gifJsonList[index].fname}, value: ${gifJsonList[index].value}`);
             },
-            // 鼠标进入函数
+            // 鼠标进入回调函数
             () => {
                 if (nowQuestionLabel == null)
                     return
@@ -120,7 +120,7 @@ async function setAll() {
                 // @ts-ignore
                 nowQuestionLabel.click();
             },
-            // 鼠标离去函数
+            // 鼠标离去回调函数
             () => {
                 if (nowQuestionLabel == null)
                     return
@@ -129,7 +129,18 @@ async function setAll() {
                 // 触发回调函数
                 // @ts-ignore
                 nowQuestionLabel.click();
-            }));
+            },
+            // 点击回调函数
+            () => {
+                if (nowQuestionLabel == null)
+                    return
+                // 设置击球动作类型
+                nowQuestionLabel.textContent = gifJson.atype;
+                // 触发回调函数
+                // @ts-ignore
+                nowQuestionLabel.click();
+            }
+        ));
         // 设置数值
         question.setQuestionValue(gifJson.value);
         questionList?.append()

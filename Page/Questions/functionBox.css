@@ -71,8 +71,29 @@
 /* 设置每个样例 */
 .coreBox .floatBox .examplePanel .exampleBox .theExample {
     height: 100%;
-    width: 50%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* 问题列表布局设置 二栏 */
+@media (min-width: 600px) {
+    .coreBox .floatBox .examplePanel .exampleBox .theExample {
+        width: 70%;
+    }
+}
+
+/* 问题列表布局设置 三栏 */
+@media (min-width: 1200px) {
+    .coreBox .floatBox .examplePanel .exampleBox .theExample {
+        width: 50%;
+    }
+}
+
+/* 问题列表布局设置 四栏 */
+@media (min-width: 1800px) {
+    .coreBox .floatBox .examplePanel .exampleBox .theExample {
+        width: 30%;
+    }
 }
