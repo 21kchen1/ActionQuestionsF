@@ -139,7 +139,7 @@ async function setAll() {
                 // 触发回调函数
                 // @ts-ignore
                 nowQuestionLabel.click();
-            }
+            },
         ));
         // 设置数值
         question.setQuestionValue(gifJson.value);
