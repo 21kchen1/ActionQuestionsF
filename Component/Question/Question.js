@@ -66,10 +66,16 @@ class Question extends Template {
                 config.rankingCallback(this.inputSlider.value);
             });
         }
-        if (config.mouseEnterCallback)
+        // 鼠标进入回调函数，包括触摸屏开始点击
+        if (config.mouseEnterCallback) {
             this.controlElement.addEventListener("mouseenter", config.mouseEnterCallback);
-        if (config.mouseLeaveCallback)
+            this.controlElement.addEventListener("touchstart", config.mouseEnterCallback);
+        }
+        // 鼠标离去回调函数，包括触摸屏结束点击
+        if (config.mouseLeaveCallback) {
             this.controlElement.addEventListener("mouseleave", config.mouseLeaveCallback);
+            this.controlElement.addEventListener("touchend", config.mouseLeaveCallback);
+        }
         if (config.clickCallback)
             this.controlElement.addEventListener("click", config.clickCallback)
     }
