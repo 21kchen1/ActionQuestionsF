@@ -44,7 +44,7 @@ class Question extends Template {
     _init() {
         this.inputSlider.addEventListener("input", this.updateState.bind(this));
         this.inputSlider.addEventListener("click", (event) => {
-            this.updateState.bind(this)
+            this.updateState.bind(this)();
             // 阻止冒泡
             event.stopPropagation();
         });
