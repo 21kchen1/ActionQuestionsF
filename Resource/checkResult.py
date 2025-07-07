@@ -14,11 +14,6 @@ import json
 from typing import Dict, List
 from buildGIFJs import getFilePaths
 
-# 数据集路径
-datasetPath = r"G:\Badminton\BADS_CLL"
-# 评分结果路径
-resultPath = r".\Result"
-
 def loadJSON(path: str) -> List[Dict]:
     """
     载入 json 文件
@@ -74,6 +69,10 @@ def getResultNameDict(resultJsonPaths: List[str]) -> Dict[str, bool]:
             resultNamesDict[json["fname"].split(".")[0]] = True
     return resultNamesDict
 
+# 数据集路径
+datasetPath = r"G:\Badminton\BADS_CLL"
+# 评分结果路径
+resultPath = r".\TestResult"
 
 def main() -> None:
     # 获取文件路径
@@ -89,6 +88,7 @@ def main() -> None:
             print(f"{datasetName} ok")
             continue
         print(f"{datasetName} error")
+        return 
     print("比较完成")
 
 if __name__ == "__main__":

@@ -132,6 +132,9 @@ def splitListRandomly(theList: List, splitNum: int, seed: Union[int, None] = Non
 
     return result
 
+# 开启测试模式，不生成 js 文件，生成 json 文件
+TEST = True
+
 def main() -> None:
     jsonsList = []
     # 获取所有 gif json
@@ -140,6 +143,10 @@ def main() -> None:
     jsonsList.extend(splitListRandomly(jsons, 18, 114514))
     # 测试页面
     # jsonsList.append(jsons[0:3])
+    if TEST:
+        pass
+        return
+    # 生成 js 文件，对网页生效
     with open(f"gifResource.js", "w", encoding= "utf-8") as file:
         file.write(f"const gifJsonListSet = {jsonsList};\nexport default gifJsonListSet;")
 
