@@ -10,6 +10,7 @@ r"""
     用于生产图像路径依赖，并完成类型划分
 """
 
+import json
 import os
 import random
 from typing import List, Union
@@ -144,7 +145,8 @@ def main() -> None:
     # 测试页面
     # jsonsList.append(jsons[0:3])
     if TEST:
-        pass
+        with open("gifResource.json", "w", encoding= "utf-8") as file:
+            file.write(json.dumps(jsonsList, ensure_ascii= False, indent= 4))
         return
     # 生成 js 文件，对网页生效
     with open(f"gifResource.js", "w", encoding= "utf-8") as file:
