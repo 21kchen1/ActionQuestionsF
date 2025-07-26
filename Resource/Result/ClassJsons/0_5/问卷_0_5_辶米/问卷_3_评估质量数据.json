@@ -1,0 +1,302 @@
+[
+    {
+        "src": ".\\Resource\\GIF\\Women_Low_ForehandHigh_LiYanmin_1_1\\Women_Low_ForehandHigh_LiYanmin_1_1@6.gif",
+        "fname": "Women_Low_ForehandHigh_LiYanmin_1_1@6.gif",
+        "atype": "正手高远球",
+        "value": 1
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_ForehandHigh_HeZhicheng_2_1\\Man_Medium_ForehandHigh_HeZhicheng_2_1@0.gif",
+        "fname": "Man_Medium_ForehandHigh_HeZhicheng_2_1@0.gif",
+        "atype": "正手高远球",
+        "value": 3
+    },
+    {
+        "src": ".\\Resource\\GIF\\Women_Low_ForehandHigh_ChenLanghong_1_1\\Women_Low_ForehandHigh_ChenLanghong_1_1@3.gif",
+        "fname": "Women_Low_ForehandHigh_ChenLanghong_1_1@3.gif",
+        "atype": "正手高远球",
+        "value": 2
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Low_BackhandTransition_LeiYang_2_1\\Man_Low_BackhandTransition_LeiYang_2_1@0.gif",
+        "fname": "Man_Low_BackhandTransition_LeiYang_2_1@0.gif",
+        "atype": "反手过渡球",
+        "value": 1
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_ForehandKill_LengYuanxing_1_1\\Man_Medium_ForehandKill_LengYuanxing_1_1@2.gif",
+        "fname": "Man_Medium_ForehandKill_LengYuanxing_1_1@2.gif",
+        "atype": "正手杀球",
+        "value": 2
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Low_ForehandLob_LiZhiBang_1_2\\Man_Low_ForehandLob_LiZhiBang_1_2@2.gif",
+        "fname": "Man_Low_ForehandLob_LiZhiBang_1_2@2.gif",
+        "atype": "正手吊球",
+        "value": 1
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_BackhandTransition_LeiXiaole_2_1\\Man_Medium_BackhandTransition_LeiXiaole_2_1@9.gif",
+        "fname": "Man_Medium_BackhandTransition_LeiXiaole_2_1@9.gif",
+        "atype": "反手过渡球",
+        "value": 4
+    },
+    {
+        "src": ".\\Resource\\GIF\\Women_Low_ForehandLob_ChenLanghong_1_1\\Women_Low_ForehandLob_ChenLanghong_1_1@9.gif",
+        "fname": "Women_Low_ForehandLob_ChenLanghong_1_1@9.gif",
+        "atype": "正手吊球",
+        "value": 1
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Low_BackhandTransition_PengJunhong_2_2\\Man_Low_BackhandTransition_PengJunhong_2_2@1.gif",
+        "fname": "Man_Low_BackhandTransition_PengJunhong_2_2@1.gif",
+        "atype": "反手过渡球",
+        "value": 1
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_ForehandKill_LiXiaohang_1_1\\Man_Medium_ForehandKill_LiXiaohang_1_1@0.gif",
+        "fname": "Man_Medium_ForehandKill_LiXiaohang_1_1@0.gif",
+        "atype": "正手杀球",
+        "value": 3
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_ForehandLob_ZhengHaotian_1_2\\Man_Medium_ForehandLob_ZhengHaotian_1_2@6.gif",
+        "fname": "Man_Medium_ForehandLob_ZhengHaotian_1_2@6.gif",
+        "atype": "正手吊球",
+        "value": 1
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_ForehandLob_HeZhicheng_1_1\\Man_Medium_ForehandLob_HeZhicheng_1_1@3.gif",
+        "fname": "Man_Medium_ForehandLob_HeZhicheng_1_1@3.gif",
+        "atype": "正手吊球",
+        "value": 3
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Low_ForehandKill_LiZhiBang_1_2\\Man_Low_ForehandKill_LiZhiBang_1_2@9.gif",
+        "fname": "Man_Low_ForehandKill_LiZhiBang_1_2@9.gif",
+        "atype": "正手杀球",
+        "value": 2
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_ForehandKill_XieZhen_2_1\\Man_Medium_ForehandKill_XieZhen_2_1@2.gif",
+        "fname": "Man_Medium_ForehandKill_XieZhen_2_1@2.gif",
+        "atype": "正手杀球",
+        "value": 2
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_ForehandLob_LiXiaohang_2_1\\Man_Medium_ForehandLob_LiXiaohang_2_1@1.gif",
+        "fname": "Man_Medium_ForehandLob_LiXiaohang_2_1@1.gif",
+        "atype": "正手吊球",
+        "value": 1
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_ForehandHigh_LengYuanxing_2_1\\Man_Medium_ForehandHigh_LengYuanxing_2_1@7.gif",
+        "fname": "Man_Medium_ForehandHigh_LengYuanxing_2_1@7.gif",
+        "atype": "正手高远球",
+        "value": 3
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_ForehandKill_LiangGenhua_1_1\\Man_Medium_ForehandKill_LiangGenhua_1_1@9.gif",
+        "fname": "Man_Medium_ForehandKill_LiangGenhua_1_1@9.gif",
+        "atype": "正手杀球",
+        "value": 2
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_BackhandTransition_LiXiaohang_2_1\\Man_Medium_BackhandTransition_LiXiaohang_2_1@0.gif",
+        "fname": "Man_Medium_BackhandTransition_LiXiaohang_2_1@0.gif",
+        "atype": "反手过渡球",
+        "value": 2
+    },
+    {
+        "src": ".\\Resource\\GIF\\Women_Low_ForehandHigh_LiYanmin_1_1\\Women_Low_ForehandHigh_LiYanmin_1_1@8.gif",
+        "fname": "Women_Low_ForehandHigh_LiYanmin_1_1@8.gif",
+        "atype": "正手高远球",
+        "value": 2
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Low_ForehandHigh_LiZhiBang_1_2\\Man_Low_ForehandHigh_LiZhiBang_1_2@8.gif",
+        "fname": "Man_Low_ForehandHigh_LiZhiBang_1_2@8.gif",
+        "atype": "正手高远球",
+        "value": 4
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Low_BackhandTransition_LeiYang_1_1\\Man_Low_BackhandTransition_LeiYang_1_1@5.gif",
+        "fname": "Man_Low_BackhandTransition_LeiYang_1_1@5.gif",
+        "atype": "反手过渡球",
+        "value": 1
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_ForehandKill_LiangGenhua_2_1\\Man_Medium_ForehandKill_LiangGenhua_2_1@2.gif",
+        "fname": "Man_Medium_ForehandKill_LiangGenhua_2_1@2.gif",
+        "atype": "正手杀球",
+        "value": 2
+    },
+    {
+        "src": ".\\Resource\\GIF\\Women_Low_ForehandHigh_LiYanmin_1_1\\Women_Low_ForehandHigh_LiYanmin_1_1@7.gif",
+        "fname": "Women_Low_ForehandHigh_LiYanmin_1_1@7.gif",
+        "atype": "正手高远球",
+        "value": 1
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Low_ForehandKill_PengJunhong_2_2\\Man_Low_ForehandKill_PengJunhong_2_2@6.gif",
+        "fname": "Man_Low_ForehandKill_PengJunhong_2_2@6.gif",
+        "atype": "正手杀球",
+        "value": 5
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_ForehandLob_LeiXiaole_2_1\\Man_Medium_ForehandLob_LeiXiaole_2_1@0.gif",
+        "fname": "Man_Medium_ForehandLob_LeiXiaole_2_1@0.gif",
+        "atype": "正手吊球",
+        "value": 4
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_ForehandLob_LiangGenhua_1_1\\Man_Medium_ForehandLob_LiangGenhua_1_1@0.gif",
+        "fname": "Man_Medium_ForehandLob_LiangGenhua_1_1@0.gif",
+        "atype": "正手吊球",
+        "value": 1
+    },
+    {
+        "src": ".\\Resource\\GIF\\Women_Low_ForehandLob_ChenLanghong_1_1\\Women_Low_ForehandLob_ChenLanghong_1_1@2.gif",
+        "fname": "Women_Low_ForehandLob_ChenLanghong_1_1@2.gif",
+        "atype": "正手吊球",
+        "value": 1
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_ForehandKill_ZhengHaotian_2_1\\Man_Medium_ForehandKill_ZhengHaotian_2_1@3.gif",
+        "fname": "Man_Medium_ForehandKill_ZhengHaotian_2_1@3.gif",
+        "atype": "正手杀球",
+        "value": 2
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_ForehandLob_XieZhen_2_1\\Man_Medium_ForehandLob_XieZhen_2_1@9.gif",
+        "fname": "Man_Medium_ForehandLob_XieZhen_2_1@9.gif",
+        "atype": "正手吊球",
+        "value": 1
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Low_BackhandTransition_LiangGenhua_2_1\\Man_Low_BackhandTransition_LiangGenhua_2_1@6.gif",
+        "fname": "Man_Low_BackhandTransition_LiangGenhua_2_1@6.gif",
+        "atype": "反手过渡球",
+        "value": 2
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_BackhandTransition_ZhengHaotian_2_1\\Man_Medium_BackhandTransition_ZhengHaotian_2_1@8.gif",
+        "fname": "Man_Medium_BackhandTransition_ZhengHaotian_2_1@8.gif",
+        "atype": "反手过渡球",
+        "value": 2
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_ForehandLob_LeiXiaole_1_1\\Man_Medium_ForehandLob_LeiXiaole_1_1@0.gif",
+        "fname": "Man_Medium_ForehandLob_LeiXiaole_1_1@0.gif",
+        "atype": "正手吊球",
+        "value": 2
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_ForehandKill_LiXiaohang_2_1\\Man_Medium_ForehandKill_LiXiaohang_2_1@0.gif",
+        "fname": "Man_Medium_ForehandKill_LiXiaohang_2_1@0.gif",
+        "atype": "正手杀球",
+        "value": 3
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_BackhandTransition_XieZhen_1_1\\Man_Medium_BackhandTransition_XieZhen_1_1@2.gif",
+        "fname": "Man_Medium_BackhandTransition_XieZhen_1_1@2.gif",
+        "atype": "反手过渡球",
+        "value": 1
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_ForehandLob_ZhengHaotian_1_2\\Man_Medium_ForehandLob_ZhengHaotian_1_2@3.gif",
+        "fname": "Man_Medium_ForehandLob_ZhengHaotian_1_2@3.gif",
+        "atype": "正手吊球",
+        "value": 2
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_BackhandTransition_LengYuanxing_1_1\\Man_Medium_BackhandTransition_LengYuanxing_1_1@2.gif",
+        "fname": "Man_Medium_BackhandTransition_LengYuanxing_1_1@2.gif",
+        "atype": "反手过渡球",
+        "value": 3
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_BackhandTransition_HeZhicheng_1_1\\Man_Medium_BackhandTransition_HeZhicheng_1_1@8.gif",
+        "fname": "Man_Medium_BackhandTransition_HeZhicheng_1_1@8.gif",
+        "atype": "反手过渡球",
+        "value": 3
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_ForehandKill_LiangGenhua_1_1\\Man_Medium_ForehandKill_LiangGenhua_1_1@6.gif",
+        "fname": "Man_Medium_ForehandKill_LiangGenhua_1_1@6.gif",
+        "atype": "正手杀球",
+        "value": 2
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Low_ForehandKill_PengJunhong_1_2\\Man_Low_ForehandKill_PengJunhong_1_2@0.gif",
+        "fname": "Man_Low_ForehandKill_PengJunhong_1_2@0.gif",
+        "atype": "正手杀球",
+        "value": 2
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_ForehandHigh_XieZhen_2_1\\Man_Medium_ForehandHigh_XieZhen_2_1@3.gif",
+        "fname": "Man_Medium_ForehandHigh_XieZhen_2_1@3.gif",
+        "atype": "正手高远球",
+        "value": 2
+    },
+    {
+        "src": ".\\Resource\\GIF\\Women_Low_ForehandKill_LiYanmin_2_1\\Women_Low_ForehandKill_LiYanmin_2_1@9.gif",
+        "fname": "Women_Low_ForehandKill_LiYanmin_2_1@9.gif",
+        "atype": "正手杀球",
+        "value": 3
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Low_BackhandTransition_LiangGenhua_2_1\\Man_Low_BackhandTransition_LiangGenhua_2_1@1.gif",
+        "fname": "Man_Low_BackhandTransition_LiangGenhua_2_1@1.gif",
+        "atype": "反手过渡球",
+        "value": 2
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_ForehandHigh_HeZhicheng_2_1\\Man_Medium_ForehandHigh_HeZhicheng_2_1@7.gif",
+        "fname": "Man_Medium_ForehandHigh_HeZhicheng_2_1@7.gif",
+        "atype": "正手高远球",
+        "value": 3
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Low_ForehandLob_PengJunhong_1_2\\Man_Low_ForehandLob_PengJunhong_1_2@8.gif",
+        "fname": "Man_Low_ForehandLob_PengJunhong_1_2@8.gif",
+        "atype": "正手吊球",
+        "value": 4
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Low_ForehandHigh_LiangGenhua_1_1\\Man_Low_ForehandHigh_LiangGenhua_1_1@1.gif",
+        "fname": "Man_Low_ForehandHigh_LiangGenhua_1_1@1.gif",
+        "atype": "正手高远球",
+        "value": 5
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Low_BackhandTransition_PengJunhong_1_2\\Man_Low_BackhandTransition_PengJunhong_1_2@3.gif",
+        "fname": "Man_Low_BackhandTransition_PengJunhong_1_2@3.gif",
+        "atype": "反手过渡球",
+        "value": 2
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_ForehandKill_LeiXiaole_1_1\\Man_Medium_ForehandKill_LeiXiaole_1_1@8.gif",
+        "fname": "Man_Medium_ForehandKill_LeiXiaole_1_1@8.gif",
+        "atype": "正手杀球",
+        "value": 4
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Low_BackhandTransition_LiangGenhua_1_1\\Man_Low_BackhandTransition_LiangGenhua_1_1@2.gif",
+        "fname": "Man_Low_BackhandTransition_LiangGenhua_1_1@2.gif",
+        "atype": "反手过渡球",
+        "value": 2
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Medium_ForehandHigh_ZhengHaotian_2_1\\Man_Medium_ForehandHigh_ZhengHaotian_2_1@1.gif",
+        "fname": "Man_Medium_ForehandHigh_ZhengHaotian_2_1@1.gif",
+        "atype": "正手高远球",
+        "value": 2
+    },
+    {
+        "src": ".\\Resource\\GIF\\Man_Low_ForehandHigh_LiZhiBang_1_2\\Man_Low_ForehandHigh_LiZhiBang_1_2@6.gif",
+        "fname": "Man_Low_ForehandHigh_LiZhiBang_1_2@6.gif",
+        "atype": "正手高远球",
+        "value": 3
+    }
+]
